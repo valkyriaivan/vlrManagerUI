@@ -1,0 +1,122 @@
+{
+  "user": {
+    "username": "valkyriaivan",
+    "profile_image_url": "https://static-cdn.jtvnw.net/user-default-pictures-uv/ce57700a-def9-11e9-842d-784f43822e80-profile_image-300x300.png"
+  },
+  "budget": 1014,
+  "points": "0.00",
+  "players": [
+    {
+      "player": {
+        "uuid": "b612b2f9f457443881a46e369dd6e6ad",
+        "username": "Mixwell",
+        "name": "Oscar Cañellas",
+        "team": {
+          "name": "Team Heretics",
+          "vlr_url": "https://www.vlr.gg/team/1001/team-heretics",
+          "photo": "//owcdn.net/img/632beb5feefc2.png"
+        },
+        "vlr_url": "https://www.vlr.gg/player/93/mixwell",
+        "photo": "//owcdn.net/img/61e26020663c8.png",
+        "twitter": "Mixwell",
+        "country": "es",
+        "total_winnings": "70096.00",
+        "riot_uuid": null,
+        "coach": false,
+        "acs": "238.79",
+        "adr": "143.40",
+        "kd": "1.22",
+        "kast": "69.93",
+        "twitch": "twitch.tv/mixwell",
+        "average": "8.28",
+        "level": "Inusual"
+      },
+      "price": 3059,
+      "points": "0.00"
+    },
+    {
+      "player": {
+        "uuid": "ef4ec2dc6ebd413f915e827931370c47",
+        "username": "Benkai",
+        "name": "Benedict Tan",
+        "team": {
+          "name": "Paper Rex",
+          "vlr_url": "https://www.vlr.gg/team/624/paper-rex",
+          "photo": "//owcdn.net/img/62bbeba74d5cb.png"
+        },
+        "vlr_url": "https://www.vlr.gg/player/9802/benkai",
+        "photo": "//owcdn.net/img/63637c2ee4c5e.png",
+        "twitter": "eggs_benkai",
+        "country": "sg",
+        "total_winnings": "66311.00",
+        "riot_uuid": null,
+        "coach": false,
+        "acs": "190.05",
+        "adr": "123.32",
+        "kd": "1.13",
+        "kast": "74.47",
+        "twitch": "twitch.tv/eggs_benkai",
+        "average": "7.57",
+        "level": "Common"
+      },
+      "price": 4036,
+      "points": "0.00"
+    },
+    {
+      "player": {
+        "uuid": "32cdf35922ee4f38a27cdb3cfda6e62f",
+        "username": "f0rsakeN",
+        "name": "Jason Susanto",
+        "team": {
+          "name": "Paper Rex",
+          "vlr_url": "https://www.vlr.gg/team/624/paper-rex",
+          "photo": "//owcdn.net/img/62bbeba74d5cb.png"
+        },
+        "vlr_url": "https://www.vlr.gg/player/9801/f0rsaken",
+        "photo": "//owcdn.net/img/63637c251437d.png",
+        "twitter": "jasonsusantoo",
+        "country": "id",
+        "total_winnings": "66311.00",
+        "riot_uuid": null,
+        "coach": false,
+        "acs": "267.31",
+        "adr": "166.99",
+        "kd": "1.29",
+        "kast": "74.46",
+        "twitch": "twitch.tv/prxf0rsaken",
+        "average": "9.14",
+        "level": "Legendary"
+      },
+      "price": 3951,
+      "points": "0.00"
+    },
+    {
+      "player": {
+        "uuid": "5cb05c26cfee45e3b4f82c5350cb1fc2",
+        "username": "d4v41",
+        "name": "Khalish Rusyaidee",
+        "team": {
+          "name": "Paper Rex",
+          "vlr_url": "https://www.vlr.gg/team/624/paper-rex",
+          "photo": "//owcdn.net/img/62bbeba74d5cb.png"
+        },
+        "vlr_url": "https://www.vlr.gg/player/9803/d4v41",
+        "photo": "//owcdn.net/img/63637c3b0a6d0.png",
+        "twitter": "prxd4v41",
+        "country": "my",
+        "total_winnings": "65661.00",
+        "riot_uuid": null,
+        "coach": false,
+        "acs": "227.59",
+        "adr": "143.99",
+        "kd": "1.24",
+        "kast": "75.47",
+        "twitch": "twitch.tv/prxd4v41",
+        "average": "8.40",
+        "level": "Inusual"
+      },
+      "price": 2940,
+      "points": "0.00"
+    }
+  ]
+}

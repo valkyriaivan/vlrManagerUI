@@ -37,15 +37,17 @@ import tableDataCheck from "views/admin/dataTables/variables/tableDataCheck.json
 import tableDataColumns from "views/admin/dataTables/variables/tableDataColumns.json";
 import tableDataComplex from "views/admin/dataTables/variables/tableDataComplex.json";
 import React from "react";
-
+import { useParams } from "react-router-dom";
 export default function Settings() {
   // Chakra Color Mode
+  const id = useParams();
   return (
     <Box pt={{ base: "130px", md: "80px", xl: "80px" }}>
       <SimpleGrid
-        mb='20px'
+        mb="20px"
         columns={{ sm: 1, md: 2 }}
-        spacing={{ base: "20px", xl: "20px" }}>
+        spacing={{ base: "20px", xl: "20px" }}
+      >
         <DevelopmentTable
           columnsData={columnsDataDevelopment}
           tableData={tableDataDevelopment}

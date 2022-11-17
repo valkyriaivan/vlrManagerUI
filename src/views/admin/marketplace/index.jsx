@@ -20,207 +20,267 @@
 
 */
 
-import React from 'react';
+import React from "react";
 
 // Chakra imports
-import { Box, Button, Flex, Grid, Link, Text, useColorModeValue, SimpleGrid } from '@chakra-ui/react';
-
+import {
+  Box,
+  Flex,
+  Grid,
+  Text,
+  useColorModeValue,
+  SimpleGrid,
+  Icon,
+  Badge,
+  Avatar,
+} from "@chakra-ui/react";
+import {
+  MdAttachMoney,
+  MdBarChart,
+  MdOutlineSupervisorAccount,
+} from "react-icons/md";
+import {
+  getMarketPlayers,
+  getUserData,
+  getRanking,
+  getHistory,
+} from "./market.utils";
 // Custom components
-import Banner from 'views/admin/marketplace/components/Banner';
-import TableTopCreators from 'views/admin/marketplace/components/TableTopCreators';
-import HistoryItem from 'views/admin/marketplace/components/HistoryItem';
-import NFT from 'components/card/NFT';
-import Card from 'components/card/Card';
-
+import TableRanking from "views/admin/marketplace/components/TableRanking";
+import HistoryItem from "views/admin/marketplace/components/HistoryItem";
+import Card from "components/card/Card";
+import { PlayersMarket } from "views/admin/marketplace/components/PlayersMarket";
 // Assets
-import Nft1 from 'assets/img/nfts/Nft1.png';
-import Nft2 from 'assets/img/nfts/Nft2.png';
-import Nft3 from 'assets/img/nfts/Nft3.png';
-import Nft4 from 'assets/img/nfts/Nft4.png';
-import Nft5 from 'assets/img/nfts/Nft5.png';
-import Nft6 from 'assets/img/nfts/Nft6.png';
-import Avatar1 from 'assets/img/avatars/avatar1.png';
-import Avatar2 from 'assets/img/avatars/avatar2.png';
-import Avatar3 from 'assets/img/avatars/avatar3.png';
-import Avatar4 from 'assets/img/avatars/avatar4.png';
-import tableDataTopCreators from 'views/admin/marketplace/variables/tableDataTopCreators.json';
-import { tableColumnsTopCreators } from 'views/admin/marketplace/variables/tableColumnsTopCreators';
+import tableDataTopCreators from "views/admin/marketplace/variables/tableDataTopCreators.json";
+import { tableColumnsRanking } from "views/admin/marketplace/variables/tableColumnsRanking";
+import MiniStatistics from "components/card/MiniStatistics";
+import IconBox from "components/icons/IconBox";
+import { useState, useEffect } from "react";
 
 export default function Marketplace() {
-	// Chakra Color Mode
-	const textColor = useColorModeValue('secondaryGray.900', 'white');
-	const textColorBrand = useColorModeValue('brand.500', 'white');
-	return (
-		<Box pt={{ base: '180px', md: '80px', xl: '80px' }}>
-			{/* Main Fields */}
-			<Grid
-				mb='20px'
-				gridTemplateColumns={{ xl: 'repeat(3, 1fr)', '2xl': '1fr 0.46fr' }}
-				gap={{ base: '20px', xl: '20px' }}
-				display={{ base: 'block', xl: 'grid' }}>
-				<Flex flexDirection='column' gridArea={{ xl: '1 / 1 / 2 / 3', '2xl': '1 / 1 / 2 / 2' }}>
-					<Banner />
-					<Flex direction='column'>
-						<Flex
-							mt='45px'
-							mb='20px'
-							justifyContent='space-between'
-							direction={{ base: 'column', md: 'row' }}
-							align={{ base: 'start', md: 'center' }}>
-							<Text color={textColor} fontSize='2xl' ms='24px' fontWeight='700'>
-								Trending NFTs
-							</Text>
-							<Flex
-								align='center'
-								me='20px'
-								ms={{ base: '24px', md: '0px' }}
-								mt={{ base: '20px', md: '0px' }}>
-								<Link
-									color={textColorBrand}
-									fontWeight='500'
-									me={{ base: '34px', md: '44px' }}
-									to='#art'>
-									Art
-								</Link>
-								<Link
-									color={textColorBrand}
-									fontWeight='500'
-									me={{ base: '34px', md: '44px' }}
-									to='#music'>
-									Music
-								</Link>
-								<Link
-									color={textColorBrand}
-									fontWeight='500'
-									me={{ base: '34px', md: '44px' }}
-									to='#collectibles'>
-									Collectibles
-								</Link>
-								<Link color={textColorBrand} fontWeight='500' to='#sports'>
-									Sports
-								</Link>
-							</Flex>
-						</Flex>
-						<SimpleGrid columns={{ base: 1, md: 3 }} gap='20px'>
-							<NFT
-								name='Abstract Colors'
-								author='By Esthera Jackson'
-								bidders={[ Avatar1, Avatar2, Avatar3, Avatar4, Avatar1, Avatar1, Avatar1, Avatar1 ]}
-								image={Nft1}
-								currentbid='0.91 ETH'
-								download='#'
-							/>
-							<NFT
-								name='ETH AI Brain'
-								author='By Nick Wilson'
-								bidders={[ Avatar1, Avatar2, Avatar3, Avatar4, Avatar1, Avatar1, Avatar1, Avatar1 ]}
-								image={Nft2}
-								currentbid='0.91 ETH'
-								download='#'
-							/>
-							<NFT
-								name='Mesh Gradients '
-								author='By Will Smith'
-								bidders={[ Avatar1, Avatar2, Avatar3, Avatar4, Avatar1, Avatar1, Avatar1, Avatar1 ]}
-								image={Nft3}
-								currentbid='0.91 ETH'
-								download='#'
-							/>
-						</SimpleGrid>
-						<Text mt='45px' mb='36px' color={textColor} fontSize='2xl' ms='24px' fontWeight='700'>
-							Recently Added
-						</Text>
-						<SimpleGrid columns={{ base: 1, md: 3 }} gap='20px' mb={{ base: '20px', xl: '0px' }}>
-							<NFT
-								name='Swipe Circles'
-								author='By Peter Will'
-								bidders={[ Avatar1, Avatar2, Avatar3, Avatar4, Avatar1, Avatar1, Avatar1, Avatar1 ]}
-								image={Nft4}
-								currentbid='0.91 ETH'
-								download='#'
-							/>
-							<NFT
-								name='Colorful Heaven'
-								author='By Mark Benjamin'
-								bidders={[ Avatar1, Avatar2, Avatar3, Avatar4, Avatar1, Avatar1, Avatar1, Avatar1 ]}
-								image={Nft5}
-								currentbid='0.91 ETH'
-								download='#'
-							/>
-							<NFT
-								name='3D Cubes Art'
-								author='By Manny Gates'
-								bidders={[ Avatar1, Avatar2, Avatar3, Avatar4, Avatar1, Avatar1, Avatar1, Avatar1 ]}
-								image={Nft6}
-								currentbid='0.91 ETH'
-								download='#'
-							/>
-						</SimpleGrid>
-					</Flex>
-				</Flex>
-				<Flex flexDirection='column' gridArea={{ xl: '1 / 3 / 2 / 4', '2xl': '1 / 2 / 2 / 3' }}>
-					<Card px='0px' mb='20px'>
-						<TableTopCreators tableData={tableDataTopCreators} columnsData={tableColumnsTopCreators} />
-					</Card>
-					<Card p='0px'>
-						<Flex
-							align={{ sm: 'flex-start', lg: 'center' }}
-							justify='space-between'
-							w='100%'
-							px='22px'
-							py='18px'>
-							<Text color={textColor} fontSize='xl' fontWeight='600'>
-								History
-							</Text>
-							<Button variant='action'>See all</Button>
-						</Flex>
+  // Chakra Color Mode
+  const textColor = useColorModeValue("secondaryGray.900", "white");
+  const textColorBrand = useColorModeValue("brand.500", "white");
+  const brandColor = useColorModeValue("brand.500", "white");
+  const boxBg = useColorModeValue("secondaryGray.300", "whiteAlpha.100");
+  const [marketData, setMarketData] = useState();
+  const [userData, setUserData] = useState({});
+  const [ranking, setRanking] = useState([]);
+  const [rankingLoading, setRankingLoading] = useState(true);
+  const [history, setHistory] = useState([]);
+  const [historyLoading, setHistoryLoading] = useState(true);
+  //  let marketData;
 
-						<HistoryItem
-							name='Colorful Heaven'
-							author='By Mark Benjamin'
-							date='30s ago'
-							image={Nft5}
-							price='0.91 ETH'
-						/>
-						<HistoryItem
-							name='Abstract Colors'
-							author='By Esthera Jackson'
-							date='58s ago'
-							image={Nft1}
-							price='0.91 ETH'
-						/>
-						<HistoryItem
-							name='ETH AI Brain'
-							author='By Nick Wilson'
-							date='1m ago'
-							image={Nft2}
-							price='0.91 ETH'
-						/>
-						<HistoryItem
-							name='Swipe Circles'
-							author='By Peter Will'
-							date='1m ago'
-							image={Nft4}
-							price='0.91 ETH'
-						/>
-						<HistoryItem
-							name='Mesh Gradients '
-							author='By Will Smith'
-							date='2m ago'
-							image={Nft3}
-							price='0.91 ETH'
-						/>
-						<HistoryItem
-							name='3D Cubes Art'
-							author='By Manny Gates'
-							date='3m ago'
-							image={Nft6}
-							price='0.91 ETH'
-						/>
-					</Card>
-				</Flex>
-			</Grid>
-			{/* Delete Product */}
-		</Box>
-	);
+  useEffect(() => {
+    async function fetchMarketData() {
+      try {
+        const market = await getMarketPlayers();
+        setMarketData(<PlayersMarket market={market} />);
+      } catch (error) {}
+    }
+    async function fetchUserData() {
+      try {
+        const data = await getUserData();
+        setUserData(data);
+      } catch (error) {}
+    }
+    async function fetchRanking() {
+      try {
+        const data = await getRanking();
+        let tableData = data.map((rank, i) => {
+          if (i >= 5) return null;
+          return {
+            username: {
+              username: rank.user.username,
+              photo: rank.user.profile_image_url,
+            },
+            team: rank.players,
+            points: rank.points,
+          };
+        });
+        tableData = tableData.filter((a) => a);
+        setRanking(tableData);
+        setRankingLoading(false);
+      } catch (error) {}
+    }
+    async function fetchHistory() {
+      try {
+        const data = await getHistory();
+        let historyData = data.map((activity, i) => {
+          if (i >= 5) return null;
+          return {
+            user: {
+              username: activity.user.username,
+              photo: activity.user.profile_image_url,
+            },
+            player: {
+              username: activity.player.username,
+              photo: activity.player.photo,
+            },
+            signed: activity.notice_type === "signing",
+            price: activity.price,
+          };
+        });
+        historyData = historyData.filter((a) => a);
+        setHistory(historyData);
+        setHistoryLoading(false);
+      } catch (error) {}
+    }
+    fetchMarketData();
+    fetchRanking();
+    fetchUserData();
+    fetchHistory();
+  }, []);
+
+  return (
+    <Box pt={{ base: "180px", md: "80px", xl: "80px" }}>
+      {/* Main Fields */}
+      <Grid
+        mb="20px"
+        gridTemplateColumns={{ xl: "repeat(3, 1fr)", "2xl": "1fr 0.46fr" }}
+        gap={{ base: "20px", xl: "20px" }}
+        display={{ base: "block", xl: "grid" }}
+      >
+        <Flex
+          flexDirection="column"
+          gridArea={{ xl: "1 / 1 / 2 / 3", "2xl": "1 / 1 / 2 / 2" }}
+        >
+          {/* <Banner /> */}
+          <SimpleGrid
+            columns={{ base: 1, md: 2, lg: 3, "2xl": 3 }}
+            gap="20px"
+            mb="20px"
+          >
+            <MiniStatistics
+              startContent={
+                <IconBox
+                  w="56px"
+                  h="56px"
+                  bg={boxBg}
+                  icon={
+                    <Icon
+                      w="32px"
+                      h="32px"
+                      as={MdAttachMoney}
+                      color={brandColor}
+                    />
+                  }
+                />
+              }
+              name="My budget"
+              value={`${userData.budget ? userData.budget : "0"}💰`}
+            />
+            <MiniStatistics
+              startContent={
+                <IconBox
+                  w="56px"
+                  h="56px"
+                  bg={boxBg}
+                  icon={
+                    <Icon
+                      w="32px"
+                      h="32px"
+                      as={MdBarChart}
+                      color={brandColor}
+                    />
+                  }
+                />
+              }
+              name="My points"
+              value={userData.points ? userData.points : "0"}
+            />
+            <MiniStatistics
+              startContent={
+                <IconBox
+                  w="56px"
+                  h="56px"
+                  bg={boxBg}
+                  icon={
+                    <Icon
+                      w="32px"
+                      h="32px"
+                      as={MdOutlineSupervisorAccount}
+                      color={brandColor}
+                    />
+                  }
+                />
+              }
+              name="Players owned"
+              value={userData.players ? userData.players.length : "0"}
+            />
+          </SimpleGrid>
+          <Flex direction="column">
+            <Flex
+              mb="20px"
+              justifyContent="space-between"
+              direction={{ base: "column", md: "row" }}
+              align={{ base: "start", md: "center" }}
+            >
+              <Text color={textColor} fontSize="2xl" ms="24px" fontWeight="700">
+                Availabe players
+              </Text>
+            </Flex>
+            {marketData}
+          </Flex>
+        </Flex>
+        <Flex
+          flexDirection="column"
+          gridArea={{ xl: "1 / 3 / 2 / 4", "2xl": "1 / 2 / 2 / 3" }}
+        >
+          <Card px="0px" mb="20px">
+            <TableRanking
+              tableData={ranking}
+              columnsData={tableColumnsRanking}
+              rankingLoading={rankingLoading}
+            />
+          </Card>
+          <Card p="0px">
+            <Flex
+              align={{ sm: "flex-start", lg: "center" }}
+              justify="space-between"
+              w="100%"
+              px="22px"
+              py="18px"
+            >
+              <Text color={textColor} fontSize="xl" fontWeight="600">
+                History
+              </Text>
+            </Flex>
+            {history.map((activity) => (
+              <HistoryItem
+                name={
+                  <>
+                    {activity.player.username}
+                    <Badge
+                      colorScheme={activity.signed ? "green" : "red"}
+                      fontSize="xs"
+                      ml="10px"
+                    >
+                      {activity.signed ? "Signed" : "Fired"}
+                    </Badge>
+                  </>
+                }
+                author={
+                  <>
+                    by
+                    <Avatar
+                      src={activity.user.photo}
+                      w="20px"
+                      h="20px"
+                      ml="8px"
+                      me="4px"
+                    />
+                    {activity.user.username}
+                  </>
+                }
+                image={activity.player.photo}
+                price={`${activity.price}💰`}
+              />
+            ))}
+          </Card>
+        </Flex>
+      </Grid>
+      {/* Delete Product */}
+    </Box>
+  );
 }

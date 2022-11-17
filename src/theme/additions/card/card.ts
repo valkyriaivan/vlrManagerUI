@@ -4,10 +4,10 @@ const Card = {
 		p: '20px',
 		display: 'flex',
 		flexDirection: 'column',
-		width: '100%',
+		// width: '100%',
 		position: 'relative',
 		borderRadius: '20px',
-		minWidth: '0px',
+		minWidth: '250px',
 		wordWrap: 'break-word',
 		bg: mode('#ffffff', 'navy.800')(props),
 		backgroundClip: 'border-box'

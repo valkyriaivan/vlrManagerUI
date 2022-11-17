@@ -6,3 +6,97 @@ body {
 option {
   color: black;
 }
+
+.player-card {
+  position: relative;
+  font-family: "Helvetica", "Arial", sans-serif;
+  display: flex;
+  min-width: 260px;
+  max-width: 260px;
+  min-height: 450px;
+  max-height: 450px;
+  /* background-image: url("./fondo-carta-legendario2.png"); */
+  background-position: center center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  color: white;
+  /* margin-right: 25px; */
+}
+.player-card.Legendary {
+  background-image: url("../img/tierCards/card-tier-legendary.png");
+}
+.player-card.Epic {
+  background-image: url("../img/tierCards/card-tier-epic.png");
+}
+.player-card.Inusual {
+  background-image: url("../img/tierCards/card-tier-inusual.png");
+}
+.player-card.Common {
+  background-image: url("../img/tierCards/card-tier-common.png");
+}
+.player-info {
+  position: absolute;
+  top: 52.5%;
+  left: 10%;
+}
+.player-nickname {
+  font-weight: bold;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+}
+.player-name {
+  margin-top: -10px;
+  font-size: 1rem;
+}
+.player-photo {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  top: 4.6%;
+  height: 46%;
+  width: 100%;
+}
+.player-photo img {
+  width: 80%;
+  height: 100%;
+  bottom: 0;
+}
+.player-infobox {
+  position: absolute;
+  /* display: flex; */
+  /* align-items: center; */
+  top: 10%;
+  right: 10%;
+  width: 15%;
+}
+.player-infobox .team {
+  width: 100%;
+}
+.player-infobox .flag {
+  width: 60%;
+  margin-left: 20%;
+  margin-top: 10px;
+}
+.player-stats {
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  top: 70%;
+  /* left: 25%; */
+  width: 100%;
+  padding-left: 21%;
+}
+.player-stats .stat-cont {
+  justify-content: center;
+  font-weight: 500;
+  margin-bottom: 5px;
+  width: 50%;
+}
+.player-stats .stat-cont .title {
+  font-size: 1rem;
+  font-weight: 400;
+}
+.player-stats .stat-cont .stat {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
